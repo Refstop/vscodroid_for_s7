@@ -1,0 +1,1 @@
+# vscodroid_for_s7
