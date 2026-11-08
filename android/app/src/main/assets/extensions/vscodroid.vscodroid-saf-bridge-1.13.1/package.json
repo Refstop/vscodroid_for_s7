@@ -1,0 +1,209 @@
+{
+    "name": "vscodroid-saf-bridge",
+    "displayName": "%displayName%",
+    "description": "%description%",
+    "version": "1.13.1",
+    "publisher": "vscodroid",
+    "engines": {
+        "vscode": "^1.96.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished",
+        "onResolveRemoteAuthority:ssh-remote"
+    ],
+    "browser": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "vscodroid.openFolderFromDevice",
+                "title": "%command.openFolderFromDevice%"
+            },
+            {
+                "command": "vscodroid.openRecentFolder",
+                "title": "%command.openRecentFolder%"
+            },
+            {
+                "command": "vscodroid.openInBrowser",
+                "title": "%command.openInBrowser%"
+            },
+            {
+                "command": "vscodroid.generateSshKey",
+                "title": "%command.generateSshKey%"
+            },
+            {
+                "command": "vscodroid.copySshPublicKey",
+                "title": "%command.copySshPublicKey%"
+            },
+            {
+                "command": "vscodroid.showStorageUsage",
+                "title": "%command.showStorageUsage%"
+            },
+            {
+                "command": "vscodroid.manageDeviceFolders",
+                "title": "%command.manageDeviceFolders%"
+            },
+            {
+                "command": "vscodroid.clearCaches",
+                "title": "%command.clearCaches%"
+            },
+            {
+                "command": "vscodroid.manageToolchains",
+                "title": "%command.manageToolchains%"
+            },
+            {
+                "command": "vscodroid.toggleExtraKeyRow",
+                "title": "%command.toggleExtraKeyRow%"
+            },
+            {
+                "command": "vscodroid.uiScale",
+                "title": "%command.uiScale%"
+            },
+            {
+                "command": "vscodroid.about",
+                "title": "%command.about%"
+            },
+            {
+                "command": "vscodroid.copyBugReport",
+                "title": "%command.copyBugReport%"
+            },
+            {
+                "command": "vscodroid.runFile",
+                "title": "%command.runFile%",
+                "icon": "$(play)"
+            },
+            {
+                "command": "vscodroid.connectRemoteWorkspace",
+                "title": "Remote-SSH: Connect to Host..."
+            },
+            {
+                "command": "vscodroid.disconnectRemoteWorkspace",
+                "title": "Remote-SSH: Close Remote Connection"
+            },
+            {
+                "command": "vscodroid.addRemoteHost",
+                "title": "Remote-SSH: Add New SSH Host..."
+            },
+            {
+                "command": "vscodroid.configureRemoteHosts",
+                "title": "Remote-SSH: Configure SSH Hosts..."
+            },
+            {
+                "command": "vscodroid.configureTailscale",
+                "title": "%command.configureTailscale%"
+            }
+        ],
+        "menus": {
+            "editor/title/run": [
+                {
+                    "command": "vscodroid.runFile",
+                    "group": "navigation@0",
+                    "when": "resourceLangId =~ /^(javascript|typescript|ruby|java|c|cpp|shellscript)$/ && resourceExtname =~ /^\\.(js|mjs|cjs|ts|mts|cts|rb|java|c|cc|cpp|cxx|c\\+\\+|sh|bash)$/ && !isInDiffEditor && shellExecutionSupported"
+                }
+            ],
+            "commandPalette": [
+                {
+                    "command": "vscodroid.runFile",
+                    "when": "resourceLangId =~ /^(javascript|typescript|ruby|java|c|cpp|shellscript)$/ && resourceExtname =~ /^\\.(js|mjs|cjs|ts|mts|cts|rb|java|c|cc|cpp|cxx|c\\+\\+|sh|bash)$/ && !isInDiffEditor && shellExecutionSupported"
+                }
+            ],
+            "statusBar/remoteIndicator": [
+                {
+                    "command": "vscodroid.connectRemoteWorkspace",
+                    "group": "remote_01_ssh"
+                },
+                {
+                    "command": "vscodroid.disconnectRemoteWorkspace",
+                    "group": "remote_01_ssh",
+                    "when": "remoteName == ssh-remote"
+                },
+                {
+                    "command": "vscodroid.openFolderFromDevice",
+                    "group": "remote_10_vscodroid_folder"
+                },
+                {
+                    "command": "vscodroid.openRecentFolder",
+                    "group": "remote_10_vscodroid_folder"
+                },
+                {
+                    "command": "vscodroid.toggleExtraKeyRow",
+                    "group": "remote_20_vscodroid_keys"
+                },
+                {
+                    "command": "vscodroid.configureTailscale",
+                    "group": "remote_30_vscodroid_network"
+                },
+                {
+                    "command": "vscodroid.about",
+                    "group": "remote_90_vscodroid_about"
+                }
+            ]
+        },
+        "viewsWelcome": [
+            {
+                "view": "explorer",
+                "contents": "%viewsWelcome.explorer.deviceFolder%"
+            }
+        ],
+        "configuration": {
+            "title": "VSCodroid",
+            "properties": {
+                "vscodroid.tailscale.autoConnect": {
+                    "type": "boolean",
+                    "default": false,
+                    "scope": "application",
+                    "markdownDescription": "%setting.tailscale.autoConnect%",
+                    "order": 10
+                },
+                "remote.SSH.hosts": {
+                    "type": "array",
+                    "default": [],
+                    "scope": "application",
+                    "description": "Saved SSH hosts. Passwords are never stored. / 저장된 SSH 호스트 (비밀번호 제외).",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "host",
+                            "user",
+                            "port"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "host": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "user": {
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "port": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 65535,
+                                "default": 22
+                            },
+                            "folder": {
+                                "type": "string",
+                                "default": "/",
+                                "pattern": "^/"
+                            },
+                            "configHost": {
+                                "type": "string",
+                                "description": "Host alias in the tablet ~/.ssh/config"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "enabledApiProposals": [
+        "resolvers"
+    ]
+}

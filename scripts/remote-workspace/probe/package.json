@@ -1,0 +1,23 @@
+{
+  "name": "remote-workspace-probe",
+  "publisher": "local-vscodroid",
+  "version": "1.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "main": "./extension.js",
+  "extensionKind": [
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodroid.testRemoteWorkspace",
+        "title": "VSCodroid: Verify Remote Workspace (Test)"
+      }
+    ]
+  }
+}

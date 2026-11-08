@@ -1,0 +1,21 @@
+{
+  "displayName": "VSCodroid Android 브리지",
+  "description": "Android에 닿는 명령: 기기 폴더, 브라우저, SSH 키, 저장 공간, 정보",
+  "command.openFolderFromDevice": "VSCodroid: 기기에서 폴더 열기",
+  "command.openRecentFolder": "VSCodroid: 최근 폴더 열기",
+  "command.openInBrowser": "VSCodroid: 브라우저에서 열기",
+  "command.generateSshKey": "VSCodroid: SSH 키 만들기",
+  "command.copySshPublicKey": "VSCodroid: SSH 공개 키 복사",
+  "command.showStorageUsage": "VSCodroid: 저장 공간 사용량 보기",
+  "command.manageDeviceFolders": "VSCodroid: 기기 폴더 저장 공간 관리",
+  "command.clearCaches": "VSCodroid: 캐시 지우기",
+  "command.manageToolchains": "VSCodroid: 툴체인 관리",
+  "command.toggleExtraKeyRow": "VSCodroid: 추가 키 행 표시 전환",
+  "command.uiScale": "VSCodroid: UI 배율",
+  "command.about": "VSCodroid: 정보",
+  "command.copyBugReport": "VSCodroid: 버그 보고서 복사",
+  "command.runFile": "VSCodroid: 파일 실행",
+  "command.configureTailscale": "VSCodroid: Tailscale 자동 연결 설정",
+  "setting.tailscale.autoConnect": "VSCodroid 실행 시 Tailscale을 자동으로 연결하고, 앱의 중지 버튼 또는 최근 앱에서 제거 시 해제합니다. **체크 해제 시 자동 연결·해제만 중단하며 현재 VPN 연결은 유지합니다.** 화면 잠금이나 다른 앱으로 전환할 때도 연결을 유지합니다. 먼저 Tailscale 로그인과 VPN 권한 허용을 완료하세요.",
+  "viewsWelcome.explorer.deviceFolder": "Documents나 Download 안의 폴더처럼 기기 저장소에 있는 폴더에서 작업하려면 기기에서 폴더를 여세요. 그래야 다른 앱이 저장한 파일도 표시됩니다.\n[기기에서 폴더 열기](command:vscodroid.openFolderFromDevice)"
+}

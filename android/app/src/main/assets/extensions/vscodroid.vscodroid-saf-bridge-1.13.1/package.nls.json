@@ -1,0 +1,21 @@
+{
+  "displayName": "VSCodroid Android Bridge",
+  "description": "Commands that reach Android: device folders, browser, SSH keys, storage, about",
+  "command.openFolderFromDevice": "VSCodroid: Open Folder from Device",
+  "command.openRecentFolder": "VSCodroid: Open Recent Folder",
+  "command.openInBrowser": "VSCodroid: Open in Browser",
+  "command.generateSshKey": "VSCodroid: Generate SSH Key",
+  "command.copySshPublicKey": "VSCodroid: Copy SSH Public Key",
+  "command.showStorageUsage": "VSCodroid: Show Storage Usage",
+  "command.manageDeviceFolders": "VSCodroid: Manage Device Folder Storage",
+  "command.clearCaches": "VSCodroid: Clear Caches",
+  "command.manageToolchains": "VSCodroid: Manage Toolchains",
+  "command.toggleExtraKeyRow": "VSCodroid: Toggle Extra Key Row",
+  "command.uiScale": "VSCodroid: UI Scale",
+  "command.about": "VSCodroid: About",
+  "command.copyBugReport": "VSCodroid: Copy Bug Report",
+  "command.runFile": "VSCodroid: Run File",
+  "command.configureTailscale": "VSCodroid: Tailscale Automatic Connection Settings",
+  "setting.tailscale.autoConnect": "Automatically connect Tailscale when VSCodroid starts, and disconnect when you use Stop or remove the app from Recents. Turning this off leaves the current VPN connection unchanged. Backgrounding and screen lock keep the connection. Sign in to Tailscale and grant VPN permission first.",
+  "viewsWelcome.explorer.deviceFolder": "To work on a folder in your device's storage, such as one in Documents or Download, open it from the device so that the files other apps saved in it show as well.\n[Open Folder from Device](command:vscodroid.openFolderFromDevice)"
+}
